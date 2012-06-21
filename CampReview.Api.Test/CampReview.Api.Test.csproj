@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A8BE50FC-FF4E-4217-BCFB-C62DD3049EA4}</ProjectGuid>
+    <ProjectGuid>{CD3F5D1F-5AC7-474A-9CF3-73B3C09B41D6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CampReview.Core</RootNamespace>
-    <AssemblyName>CampReview.Core</AssemblyName>
+    <RootNamespace>CampReview.Api.Test</RootNamespace>
+    <AssemblyName>CampReview.Api.Test</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -33,15 +33,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper">
-      <HintPath>..\packages\AutoMapper.2.1.267\lib\net40\AutoMapper.dll</HintPath>
+    <Reference Include="FizzWare.NBuilder">
+      <HintPath>..\packages\NBuilder.3.0.1.1\lib\FizzWare.NBuilder.dll</HintPath>
     </Reference>
     <Reference Include="Ninject">
       <HintPath>..\packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
     </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,25 +55,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\Defaults.cs" />
-    <Compile Include="Commands\GetRegionCommand.cs" />
-    <Compile Include="Commands\GetRegionsCommand.cs" />
-    <Compile Include="Commands\ICommand.cs" />
-    <Compile Include="Commands\Requests\Request.cs" />
-    <Compile Include="Commands\Responses\Response.cs" />
-    <Compile Include="Conversions\AutoMapperMapper.cs" />
-    <Compile Include="Conversions\IMapper.cs" />
-    <Compile Include="Models\Campground.cs" />
-    <Compile Include="Models\Campsite.cs" />
-    <Compile Include="Models\Location.cs" />
-    <Compile Include="Models\Region.cs" />
-    <Compile Include="Models\Review.cs" />
+    <Compile Include="Controllers\RegionsControllerTests.cs" />
+    <Compile Include="Conversions\When_mapping_to_the_region_model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CampReview.Api\CampReview.Api.csproj">
+      <Project>{C235859D-1091-4E61-8710-040A24B26DFB}</Project>
+      <Name>CampReview.Api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CampReview.Core\CampReview.Core.csproj">
+      <Project>{A8BE50FC-FF4E-4217-BCFB-C62DD3049EA4}</Project>
+      <Name>CampReview.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CampReview.Data\CampReview.Data.csproj">
       <Project>{A13A8D70-8856-4E39-A5CC-2F6CF6C568F6}</Project>
       <Name>CampReview.Data</Name>

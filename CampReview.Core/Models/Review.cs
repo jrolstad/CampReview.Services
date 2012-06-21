@@ -1,6 +1,8 @@
-﻿namespace CampReview.Core.Models
+﻿using CampReview.Data;
+
+namespace CampReview.Core.Models
 {
-    public class Review
+    public class Review 
     {
         public int Rating { get; set; }
 

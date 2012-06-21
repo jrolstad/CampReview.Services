@@ -1,8 +1,6 @@
-﻿using CampReview.Data;
-
-namespace CampReview.Core.Models
+﻿namespace CampReview.Api.Models
 {
-    public class Region: IEntity
+    public class RegionModel
     {
         public string Id { get; set; }
 

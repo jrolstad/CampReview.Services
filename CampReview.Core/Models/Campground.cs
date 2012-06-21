@@ -1,8 +1,10 @@
-﻿namespace CampReview.Core.Models
+﻿using CampReview.Data;
+
+namespace CampReview.Core.Models
 {
-    public class Campground
+    public class Campground: IEntity
     {
-        public string CampgroundId { get; set; }
+        public string Id { get; set; }
 
         public string Name { get; set; }
 

@@ -1,8 +1,8 @@
 using System;
 using System.Linq;
 using CampReview.Core.Commands;
-using CampReview.Core.Data;
 using CampReview.Core.Models;
+using CampReview.Data;
 using FizzWare.NBuilder;
 using NUnit.Framework;
 using Rhino.Mocks;

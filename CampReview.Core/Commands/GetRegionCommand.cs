@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using CampReview.Core.Commands.Requests;
-using CampReview.Core.Data;
 using CampReview.Core.Models;
+using CampReview.Data;
 
 namespace CampReview.Core.Commands
 {
