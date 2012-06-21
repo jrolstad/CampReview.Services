@@ -93,6 +93,9 @@
     <Reference Include="Raven.Storage.Managed">
       <HintPath>..\packages\RavenDB.Database.1.0.960\lib\net40\Raven.Storage.Managed.dll</HintPath>
     </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="Spatial4n.Core">
       <HintPath>..\packages\RavenDB.Database.1.0.960\lib\net40\Spatial4n.Core.dll</HintPath>
     </Reference>
@@ -106,6 +109,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\When_getting_all_regions.cs" />
+    <Compile Include="Commands\When_getting_a_region.cs" />
     <Compile Include="Data\RavenDbRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

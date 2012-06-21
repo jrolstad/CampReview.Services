@@ -58,9 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\Defaults.cs" />
     <Compile Include="Commands\GetRegionCommand.cs" />
+    <Compile Include="Commands\GetRegionsCommand.cs" />
     <Compile Include="Commands\ICommand.cs" />
-    <Compile Include="Commands\Requests\GetRegionRequest.cs" />
+    <Compile Include="Commands\Requests\Request.cs" />
+    <Compile Include="Commands\Responses\Response.cs" />
     <Compile Include="Conversions\AutoMapperMapper.cs" />
     <Compile Include="Conversions\IMapper.cs" />
     <Compile Include="Data\IRepository.cs" />
