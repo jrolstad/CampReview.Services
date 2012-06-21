@@ -4,8 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/themes/base/css", "~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.21/themes/cupertino/jquery-ui.css")
+    @Styles.Render("~/Content/css")
+
+    @Scripts.Render("http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js")
+    @Scripts.Render("http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js")
+    @Scripts.Render("http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.21/jquery-ui.min.js")
+    @Scripts.Render("http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js")
+
+    @Scripts.Render("http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js")
+    @Scripts.Render("http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.validate.unobtrusive.min.js")
 </head>
 <body>
     @RenderBody()
