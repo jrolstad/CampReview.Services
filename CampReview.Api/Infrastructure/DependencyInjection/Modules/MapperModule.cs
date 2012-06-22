@@ -10,6 +10,7 @@ namespace CampReview.Api.Infrastructure.DependencyInjection.Modules
         public override void Load()
         {
             Bind<IMapper<Region, RegionModel>>().To<AutoMapperMapper<Region, RegionModel>>();
+            Bind<IMapper<RegionModel, Region>>().To<AutoMapperMapper<RegionModel, Region>>();
         }
     }
 }

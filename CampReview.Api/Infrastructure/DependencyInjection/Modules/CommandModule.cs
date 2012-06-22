@@ -11,6 +11,7 @@ namespace CampReview.Api.Infrastructure.DependencyInjection.Modules
         public override void Load()
         {
             Bind<ICommand<Request, IEnumerable<Region>>>().To<GetRegionsCommand>();
+            Bind<ICommand<string, Region>>().To<GetRegionCommand>();
         }
     }
 }

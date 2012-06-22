@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using CampReview.Api.Infrastructure.DependencyInjection;
 using CampReview.Api.Models;
@@ -20,51 +17,45 @@ namespace CampReview.Api.Controllers
     {
         private readonly IMapper<Region, RegionModel> _regionMapper;
         private readonly ICommand<Request, IEnumerable<Region>> _getRegionsCommand;
+        private readonly ICommand<string, Region> _getRegionCommand;
 
         public RegionsController()
             : this(
             IoC.Get<IMapper<Region, RegionModel>>(),
-            IoC.Get<ICommand<Request,IEnumerable<Region>>>()
+            IoC.Get<ICommand<Request,IEnumerable<Region>>>(),
+            IoC.Get<ICommand<string,Region>>()
             )
         {
             
         }
 
-        public RegionsController(IMapper<Region, RegionModel> regionMapper, ICommand<Request, IEnumerable<Region>> getRegionsCommand)
+        public RegionsController(IMapper<Region, RegionModel> regionMapper, 
+            ICommand<Request, IEnumerable<Region>> getRegionsCommand,
+            ICommand<string,Region> _getRegionCommand )
         {
             _regionMapper = regionMapper;
             _getRegionsCommand = getRegionsCommand;
+            this._getRegionCommand = _getRegionCommand;
         }
 
         // GET api/regions
-        public IEnumerable<RegionModel> Get()
+        public IQueryable<RegionModel> Get()
         {
             var regions = _getRegionsCommand.Execute(Defaults.DefaultRequest);
 
-            var regionModels = regions.Select(_regionMapper.Map);
+            var regionModels = regions.Select(_regionMapper.Map).AsQueryable();
 
             return regionModels;
         }
 
         // GET api/regions/5
-        public string Get(int id)
+        public RegionModel Get(string id)
         {
-            return "value";
-        }
+            var region = _getRegionCommand.Execute(id);
 
-        // POST api/regions
-        public void Post(string value)
-        {
-        }
+            var regionModel = _regionMapper.Map(region);
 
-        // PUT api/regions/5
-        public void Put(int id, string value)
-        {
-        }
-
-        // DELETE api/regions/5
-        public void Delete(int id)
-        {
+            return regionModel;
         }
     }
 }

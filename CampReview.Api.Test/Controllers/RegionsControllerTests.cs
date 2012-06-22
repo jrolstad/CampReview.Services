@@ -41,6 +41,24 @@ namespace CampReview.Api.Test.Controllers
 
             // Assert
             Assert.That(result.Count(),Is.EqualTo(regions.Count));
+        }
+
+        [Test]
+        public void When_obtaining_a_region_then_it_is_obtained()
+        {
+            // Arrange
+            var region = Builder<Region>.CreateNew().Build();
+            var command = MockRepository.GenerateStub<ICommand<string, Region>>();
+            command.Stub(c => c.Execute(region.Id)).Return(region);
+            _kernel.Rebind<ICommand<string, Region>>().ToConstant(command);
+
+            var controller = _kernel.Get<RegionsController>();
+
+            // Act
+            var result = controller.Get(region.Id);
+
+            // Assert
+            Assert.That(result.Id, Is.EqualTo(region.Id));
         } 
 
     }
