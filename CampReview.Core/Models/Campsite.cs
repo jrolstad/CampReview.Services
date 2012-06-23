@@ -11,5 +11,7 @@ namespace CampReview.Core.Models
         public Location Location { get; set; }
 
         public Review Review { get; set; }
+
+        public string CampgroundId { get; set; }
     }
 }

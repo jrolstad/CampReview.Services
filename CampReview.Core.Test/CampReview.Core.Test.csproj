@@ -109,8 +109,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\When_getting_all_campgrounds_in_a_region.cs" />
     <Compile Include="Commands\When_getting_all_regions.cs" />
+    <Compile Include="Commands\When_getting_a_campground.cs" />
     <Compile Include="Commands\When_getting_a_region.cs" />
+    <Compile Include="Commands\When_saving_a_campground.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

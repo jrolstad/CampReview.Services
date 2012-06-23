@@ -35,7 +35,7 @@ namespace CampReview.Core.Test.Commands
             var result = command.Execute(regionID);
 
             // Assert
-            Assert.That(result.Select(r=>r.RegionId).Distinct().ToArray,Is.EquivalentTo(new[]{regionID}));
+            Assert.That(result.Select(r=>r.RegionId).Distinct().ToArray(),Is.EquivalentTo(new[]{regionID}));
         }
     }
 }
