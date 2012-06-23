@@ -4,7 +4,7 @@ namespace CampReview.Core.Commands.Requests
     {
         public string CampsiteId { get; set; }
 
-        public int Review { get; set; }
+        public int Rating { get; set; }
 
     }
 }

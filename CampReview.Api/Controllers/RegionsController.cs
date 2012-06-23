@@ -41,7 +41,7 @@ namespace CampReview.Api.Controllers
         // GET api/regions
         public IQueryable<RegionModel> Get()
         {
-            var regions = _getRegionsCommand.Execute(Defaults.DefaultRequest);
+            var regions = _getRegionsCommand.Execute(CampReview.Core.Commands.Requests.Request.Empty);
 
             var regionModels = regions.Select(_regionMapper.Map).AsQueryable();
 

@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using CampReview.Core.Commands;
+using CampReview.Core.Commands.Requests;
 using CampReview.Core.Models;
 using CampReview.Data;
 using FizzWare.NBuilder;
@@ -22,7 +23,7 @@ namespace CampReview.Core.Test.Commands
             var command = new GetRegionsCommand(repository);
 
             // Act
-            var result = command.Execute(Defaults.DefaultRequest);
+            var result = command.Execute(Request.Empty);
 
             // Assert
             Assert.That(result,Is.EquivalentTo(regions));

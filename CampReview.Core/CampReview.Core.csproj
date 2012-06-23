@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\CreateCampgroundCommand.cs" />
-    <Compile Include="Commands\Defaults.cs" />
+    <Compile Include="Commands\CreateCampsiteCommand.cs" />
     <Compile Include="Commands\GetCampgroundCommand.cs" />
     <Compile Include="Commands\GetCampgroundsInRegionCommand.cs" />
     <Compile Include="Commands\GetCampsiteCommand.cs" />
@@ -58,6 +58,9 @@
     <Compile Include="Commands\GetRegionCommand.cs" />
     <Compile Include="Commands\GetRegionsCommand.cs" />
     <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\Requests\CreateCampsiteRequest.cs" />
+    <Compile Include="Commands\CreateCampsiteReviewCommand.cs" />
+    <Compile Include="Commands\Requests\CreateCampsiteReviewRequest.cs" />
     <Compile Include="Commands\Requests\Request.cs" />
     <Compile Include="Commands\Requests\CreateCampgroundRequest.cs" />
     <Compile Include="Commands\Responses\Response.cs" />
