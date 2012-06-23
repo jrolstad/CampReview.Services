@@ -126,6 +126,7 @@
     <Compile Include="Controllers\CampgroundsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegionsController.cs" />
+    <Compile Include="Conversions\CampgroundMapper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

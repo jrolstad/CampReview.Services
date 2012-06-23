@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\CreateCampgroundCommand.cs" />
     <Compile Include="Commands\Defaults.cs" />
     <Compile Include="Commands\GetCampgroundCommand.cs" />
     <Compile Include="Commands\GetCampgroundsInRegionCommand.cs" />
@@ -58,9 +59,8 @@
     <Compile Include="Commands\GetRegionsCommand.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\Requests\Request.cs" />
+    <Compile Include="Commands\Requests\CreateCampgroundRequest.cs" />
     <Compile Include="Commands\Responses\Response.cs" />
-    <Compile Include="Commands\SaveCampgroundCommand.cs" />
-    <Compile Include="Commands\SaveCampsiteCommand.cs" />
     <Compile Include="Conversions\AutoMapperMapper.cs" />
     <Compile Include="Conversions\IMapper.cs" />
     <Compile Include="Models\Campground.cs" />
