@@ -1,4 +1,5 @@
-﻿using CampReview.Api.Infrastructure.DependencyInjection.Modules;
+﻿using System;
+using CampReview.Api.Infrastructure.DependencyInjection.Modules;
 using Ninject;
 using Ninject.Modules;
 
@@ -41,6 +42,16 @@ namespace CampReview.Api.Infrastructure.DependencyInjection
         public static T Get<T>()
         {
             return _kernel.Get<T>();
+        }
+
+        /// <summary>
+        /// Obtains an instace of a class
+        /// </summary>
+        /// <param name="controllerType">Type to get</param>
+        /// <returns></returns>
+        public static object Get(Type controllerType)
+        {
+            return _kernel.Get(controllerType);
         }
     }
 }

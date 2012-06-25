@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web.Http;
+using System.Web.Mvc;
 using CampReview.Api.Infrastructure.DependencyInjection;
 using CampReview.Api.Models;
 using CampReview.Core.Commands;
@@ -10,52 +10,46 @@ using CampReview.Core.Models;
 
 namespace CampReview.Api.Controllers
 {
-    /// <summary>
-    /// Api controller wrapping region data
-    /// </summary>
-    public class RegionsController : ApiController
+    public class RegionsController : Controller
     {
-        private readonly IMapper<Region, RegionModel> _regionMapper;
-        private readonly ICommand<Request, IEnumerable<Region>> _getRegionsCommand;
+        private readonly ICommand<Request, IEnumerable<Region>> _getAllRegionsCommand;
         private readonly ICommand<string, Region> _getRegionCommand;
+        private readonly IMapper<Region, RegionModel> _regionModelMapper;
 
-        public RegionsController()
-            : this(
-            IoC.Get<IMapper<Region, RegionModel>>(),
-            IoC.Get<ICommand<Request,IEnumerable<Region>>>(),
-            IoC.Get<ICommand<string,Region>>()
+        public RegionsController():
+            this(
+            IoC.Get<ICommand<Request, IEnumerable<Region>>>(),
+            IoC.Get<ICommand<string, Region>>(),
+            IoC.Get<IMapper<Region, RegionModel>>()
             )
         {
             
         }
 
-        public RegionsController(IMapper<Region, RegionModel> regionMapper, 
-            ICommand<Request, IEnumerable<Region>> getRegionsCommand,
-            ICommand<string,Region> _getRegionCommand )
+        public RegionsController(ICommand<Request, IEnumerable<Region>> getAllRegionsCommand,
+            ICommand<string,Region> _getRegionCommand,
+            IMapper<Region,RegionModel> _regionModelMapper 
+            )
         {
-            _regionMapper = regionMapper;
-            _getRegionsCommand = getRegionsCommand;
+            _getAllRegionsCommand = getAllRegionsCommand;
             this._getRegionCommand = _getRegionCommand;
+            this._regionModelMapper = _regionModelMapper;
         }
 
-        // GET api/regions
-        public IQueryable<RegionModel> Get()
+        public JsonResult GetAll()
         {
-            var regions = _getRegionsCommand.Execute(CampReview.Core.Commands.Requests.Request.Empty);
+            var regions = _getAllRegionsCommand.Execute(Core.Commands.Requests.Request.Empty);
+            var models = regions.Select(r => _regionModelMapper.Map(r)).ToList();
 
-            var regionModels = regions.Select(_regionMapper.Map).AsQueryable();
-
-            return regionModels;
+            return Json(models, JsonRequestBehavior.AllowGet);
         }
 
-        // GET api/regions/5
-        public RegionModel Get(string id)
+        public JsonResult Get(string regionId)
         {
-            var region = _getRegionCommand.Execute(id);
+            var region = _getRegionCommand.Execute(regionId);
+            var model = _regionModelMapper.Map(region);
 
-            var regionModel = _regionMapper.Map(region);
-
-            return regionModel;
+            return Json(model, JsonRequestBehavior.AllowGet);
         }
     }
 }

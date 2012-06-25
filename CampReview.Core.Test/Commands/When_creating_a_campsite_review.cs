@@ -14,7 +14,7 @@ namespace CampReview.Core.Test.Commands
     {
         private IRepository _repository;
         private CreateCampsiteReviewRequest _request;
-        private Review _response;
+        private Campsite _response;
         private Campsite _campsite;
 
         [TestFixtureSetUp]
@@ -42,7 +42,7 @@ namespace CampReview.Core.Test.Commands
         {
             // Assert
             Assert.That(_campsite.Review.Rating, Is.EqualTo(_request.Rating));
-            Assert.That(_response.Rating, Is.EqualTo(_request.Rating));
+            Assert.That(_response.Review.Rating, Is.EqualTo(_request.Rating));
         }
 
         [Test]

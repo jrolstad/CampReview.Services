@@ -4,7 +4,7 @@ using CampReview.Data;
 
 namespace CampReview.Core.Commands
 {
-    public class CreateCampsiteReviewCommand:ICommand<CreateCampsiteReviewRequest,Review>
+    public class CreateCampsiteReviewCommand:ICommand<CreateCampsiteReviewRequest,Campsite>
     {
         private readonly IRepository _repository;
 
@@ -13,7 +13,7 @@ namespace CampReview.Core.Commands
             _repository = repository;
         }
 
-        public Review Execute(CreateCampsiteReviewRequest request)
+        public Campsite Execute(CreateCampsiteReviewRequest request)
         {
             var campsite = _repository.Get<Campsite>(request.CampsiteId);
 
@@ -21,7 +21,7 @@ namespace CampReview.Core.Commands
 
             _repository.Save(campsite);
 
-            return campsite.Review;
+            return campsite;
         }
     }
 }

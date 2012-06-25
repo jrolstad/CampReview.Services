@@ -124,6 +124,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CampgroundsController.cs" />
+    <Compile Include="Controllers\CampsitesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegionsController.cs" />
     <Compile Include="Conversions\CampgroundMapper.cs" />
@@ -138,7 +139,10 @@
     <Compile Include="Infrastructure\DependencyInjection\Modules\MapperModule.cs" />
     <Compile Include="Models\CampgroundModel.cs" />
     <Compile Include="Models\CampsiteModel.cs" />
+    <Compile Include="Models\Requests\CreateCampgroundRequest.cs" />
     <Compile Include="Models\RegionModel.cs" />
+    <Compile Include="Models\Requests\CreateCampsiteRequest.cs" />
+    <Compile Include="Models\Requests\CreateCampsiteReviewRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
