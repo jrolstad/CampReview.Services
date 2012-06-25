@@ -58,6 +58,7 @@
     <Compile Include="Controllers\RegionsControllerTests.cs" />
     <Compile Include="Conversions\When_mapping_from_the_region_model.cs" />
     <Compile Include="Conversions\When_mapping_to_the_campground_model.cs" />
+    <Compile Include="Conversions\When_mapping_to_the_campsite_model.cs" />
     <Compile Include="Conversions\When_mapping_to_the_region_model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

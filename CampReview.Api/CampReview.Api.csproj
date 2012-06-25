@@ -127,6 +127,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegionsController.cs" />
     <Compile Include="Conversions\CampgroundMapper.cs" />
+    <Compile Include="Conversions\CampsiteMapper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -136,6 +137,7 @@
     <Compile Include="Infrastructure\DependencyInjection\IoC.cs" />
     <Compile Include="Infrastructure\DependencyInjection\Modules\MapperModule.cs" />
     <Compile Include="Models\CampgroundModel.cs" />
+    <Compile Include="Models\CampsiteModel.cs" />
     <Compile Include="Models\RegionModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

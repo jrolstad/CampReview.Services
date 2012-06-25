@@ -14,7 +14,7 @@ namespace CampReview.Api.Infrastructure.DependencyInjection.Modules
             Bind<IMapper<RegionModel, Region>>().To<AutoMapperMapper<RegionModel, Region>>();
 
             Bind<IMapper<Campground, CampgroundModel>>().To<CampgroundMapper>();
-            Bind<IMapper<CampgroundModel, Campground>>().To<AutoMapperMapper<CampgroundModel, Campground>>();
+            Bind<IMapper<Campsite, CampsiteModel>>().To<CampsiteMapper>();
         }
     }
 }
