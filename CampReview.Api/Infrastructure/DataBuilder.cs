@@ -17,6 +17,7 @@ namespace CampReview.Api.Infrastructure
         {
             BuildRegions();
             BuildCampgrounds();
+            BuildCampsites();
         }
 
         private void BuildRegions()
@@ -36,6 +37,17 @@ namespace CampReview.Api.Infrastructure
             _repository.Save(new Campground{Id="2",Name = "Beverly Beach State Park",RegionId = "2",Location = new Location{Latitude = 1,Longitude = 2}});
             _repository.Save(new Campground{Id="3",Name = "Devil Lake State Park",RegionId = "2",Location = new Location{Latitude = 1,Longitude = 2}});
             _repository.Save(new Campground{Id="4",Name = "Nehalem Bay State Park",RegionId = "2",Location = new Location{Latitude = 1,Longitude = 2}});
+
+        }
+
+        private void BuildCampsites()
+        {
+            if (_repository.Find<Campsite>().Any()) return;
+
+            _repository.Save(new Campsite { Id = "1", Name = "F1", CampgroundId = "2", Location = new Location { Latitude = 1, Longitude = 2 },Review = new Review()});
+            _repository.Save(new Campsite { Id = "2", Name = "F2", CampgroundId = "2", Location = new Location { Latitude = 1, Longitude = 2 }, Review = new Review() });
+            _repository.Save(new Campsite { Id = "3", Name = "A34", CampgroundId = "2", Location = new Location { Latitude = 1, Longitude = 2 }, Review = new Review() });
+            _repository.Save(new Campsite { Id = "4", Name = "3", CampgroundId = "3", Location = new Location { Latitude = 1, Longitude = 2 }, Review = new Review() });
 
         }
 }

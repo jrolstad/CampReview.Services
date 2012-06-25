@@ -55,6 +55,7 @@ namespace CampReview.Api.Controllers
             return Json(model, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
         public JsonResult Create(CreateCampgroundRequest webRequest)
         {
             var request = _createCampgroundRequestMapper.Map(webRequest);

@@ -47,9 +47,9 @@ namespace CampReview.Api.Controllers
             _createReviewRequestMapper = createReviewRequestMapper;
         }
 
-        public JsonResult GetByCampground(string regionId)
+        public JsonResult GetByCampground(string campgroundId)
         {
-            var campsites = _getCampsitesInRegionCommand.Execute(regionId);
+            var campsites = _getCampsitesInRegionCommand.Execute(campgroundId);
             var models = campsites.Select(r => _campsiteModelMapper.Map(r)).ToList();
 
             return Json(models, JsonRequestBehavior.AllowGet);
