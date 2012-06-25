@@ -40,7 +40,7 @@ namespace CampReview.Data.InMemory
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="value"></param>
-        public void Save<T>(T value)
+        public void Save<T>(T value) where T : IEntity
         {
             this.Delete(value);
             _entities.Add(value);
@@ -51,7 +51,7 @@ namespace CampReview.Data.InMemory
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="value"></param>
-        public void Delete<T>(T value)
+        public void Delete<T>(T value) where T : IEntity
         {
             _entities.Remove(value);
         }

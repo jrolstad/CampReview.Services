@@ -134,7 +134,6 @@
     </Compile>
     <Compile Include="Infrastructure\DataBuilder.cs" />
     <Compile Include="Infrastructure\DependencyInjection\Modules\CommandModule.cs" />
-    <Compile Include="Infrastructure\DependencyInjection\Modules\DataModule.cs" />
     <Compile Include="Infrastructure\DependencyInjection\IoC.cs" />
     <Compile Include="Infrastructure\DependencyInjection\Modules\MapperModule.cs" />
     <Compile Include="Models\CampgroundModel.cs" />

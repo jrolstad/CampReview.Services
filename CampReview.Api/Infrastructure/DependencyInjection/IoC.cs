@@ -1,5 +1,6 @@
 ﻿using System;
 using CampReview.Api.Infrastructure.DependencyInjection.Modules;
+using CampReview.Data.MongoDb;
 using Ninject;
 using Ninject.Modules;
 
@@ -28,7 +29,7 @@ namespace CampReview.Api.Infrastructure.DependencyInjection
             var modulesToLoad = new INinjectModule[]
                                     {
                                         new MapperModule() ,
-                                        new DataModule(),
+                                        new MongoDbModule(),
                                         new CommandModule()
                                     };
             kernel.Load(modulesToLoad);

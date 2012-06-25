@@ -1,8 +1,6 @@
-﻿using CampReview.Data;
-using CampReview.Data.InMemory;
 using Ninject.Modules;
 
-namespace CampReview.Api.Infrastructure.DependencyInjection.Modules
+namespace CampReview.Data.InMemory
 {
     public class DataModule:NinjectModule
     {

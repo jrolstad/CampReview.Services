@@ -27,13 +27,13 @@ namespace CampReview.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="value"></param>
-        void Save<T>(T value);
+        void Save<T>(T value) where T : IEntity;
 
         /// <summary>
         /// Delete a given item
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="value"></param>
-        void Delete<T>(T value);
+        void Delete<T>(T value) where T : IEntity;
     }
 }
